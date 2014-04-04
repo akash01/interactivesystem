@@ -29,7 +29,7 @@ public class ObjectReactor : MonoBehaviour {
 			//animation.Play("SmileIn");
 		}
 
-		print(hit);
+		print("TEST " + hit);
 
 		lastHit = thisHit;
 		thisHit = false;
