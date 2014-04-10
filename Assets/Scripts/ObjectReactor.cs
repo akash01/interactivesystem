@@ -16,27 +16,23 @@ public class ObjectReactor : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
+		// Set up 'hit' variable - true if raytrace hitting avatar box collider, false if not
 		if ( thisHit && !lastHit ) 
 		{
 			hit = true;
-			//animation.Play("SmileIn");
 		}
 
 		if ( !thisHit && lastHit ) 
 		{
 			hit = false;
-			//animation.Play("SmileIn");
 		}
-
-		//removed TEST from print line
-		print(hit);
-
+							//TEST PRINT LINE - REMOVE
+							print(hit);
 		lastHit = thisHit;
 		thisHit = false;
+		
+		// Trigger expression animation on first hit (when raytrace first hits collider)
 
-
-		//print (lastHit );
 	}
 
 	public void OnRayDetect() {
