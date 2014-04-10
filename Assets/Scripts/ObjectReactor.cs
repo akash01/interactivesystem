@@ -9,15 +9,17 @@ public class ObjectReactor : MonoBehaviour {
 	bool hit = false;
 	bool lastHit = false;
 	bool animationReady = true;
+	GameObject globals;
+
 
 	//Temp global variables
-	string expression = "smile";
-	int initialPause = 1;
-	int expressionPause = 1;
+	//string localExpression = "smile";
+	//int localInitialPause = 1;
+	//int localExpressionPause = 1;
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
@@ -38,7 +40,7 @@ public class ObjectReactor : MonoBehaviour {
 		thisRayDetect = false;
 
 		//TEST PRINT LINE - REMOVE
-		print(hit);
+		//print(hit);
 
 		// Trigger expression animation on first hit (when raytrace first hits collider)
 		if ( hit && !lastHit ) 
@@ -71,22 +73,22 @@ public class ObjectReactor : MonoBehaviour {
 		string animationOut = "SmileOut";
 
 		//Set expression animations based on 'expression' global
-		if (expression == "smile") {
+		if (Global.expression == "smile") {
 			animationIn = "SmileIn";
 			animationOut = "SmileOut";
 		}
-		if (expression == "frown") {
+		if (Global.expression == "frown") {
 			animationIn = "frownIn";
 			animationOut = "frownOut";
 		}
 
 		//Wait for initial pause (from global)
-		yield return new WaitForSeconds(initialPause);
+		yield return new WaitForSeconds(Global.initialPause);
 		//Play in animation
 		animation.Play(animationIn);
 		//Wait for pause in middle of expression (from global) 
 		//Plus second to allow in animation to finish
-		yield return new WaitForSeconds(expressionPause + 1);
+		yield return new WaitForSeconds(Global.expressionPause + 1);
 		//Play out animation
 		animation.Play(animationOut);
 		//Wait for out animation to finish
