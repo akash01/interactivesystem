@@ -65,6 +65,7 @@ public class ObjectReactor : MonoBehaviour {
 	public void OnRayDetect() {
 		//Record of raytrace hit on this frame
 		thisRayDetect = true;
+		print ("test");
 	}
 
 	//Play expression based on global variables
