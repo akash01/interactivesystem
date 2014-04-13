@@ -29,7 +29,8 @@ public class GUIControl : MonoBehaviour {
 			GUI.contentColor = Color.white;
 			if (Global.expression == "smile") {GUI.contentColor = Color.red;}
 			if(GUI.Button(new Rect(20,40,90,20), "Smile (1)")
-			   || Event.current.Equals (Event.KeyboardEvent ("[1]"))) {
+			   || Event.current.Equals (Event.KeyboardEvent ("[1]"))
+			   || Event.current.Equals (Event.KeyboardEvent ("1"))) {
 				Global.expression = "smile";
 			}
 
@@ -37,7 +38,8 @@ public class GUIControl : MonoBehaviour {
 			GUI.contentColor = Color.white;
 			if (Global.expression == "frown") {GUI.contentColor = Color.red;}
 			if(GUI.Button(new Rect(20,70,90,20), "Frown (2)")
-			   || Event.current.Equals (Event.KeyboardEvent ("[2]"))) {
+			   || Event.current.Equals (Event.KeyboardEvent ("[2]"))
+			   || Event.current.Equals (Event.KeyboardEvent ("2"))) {
 				Global.expression = "frown";
 			}
 			
@@ -45,7 +47,8 @@ public class GUIControl : MonoBehaviour {
 			GUI.contentColor = Color.white;
 			if (Global.expression == "angry") {GUI.contentColor = Color.red;}
 			if(GUI.Button(new Rect(20,100,90,20), "Angry (3)")
-			   || Event.current.Equals (Event.KeyboardEvent ("[3]"))) {
+			   || Event.current.Equals (Event.KeyboardEvent ("[3]"))
+			   || Event.current.Equals (Event.KeyboardEvent ("3"))) {
 				Global.expression = "angry";
 			}
 			GUI.contentColor = Color.white;
@@ -55,7 +58,8 @@ public class GUIControl : MonoBehaviour {
 			
 			// Increase initial delay - range 0-10
 			if(GUI.Button(new Rect(20,180,90,20), "Increase (7)")
-			   || Event.current.Equals (Event.KeyboardEvent ("[7]"))) {
+			   || Event.current.Equals (Event.KeyboardEvent ("[7]"))
+			   || Event.current.Equals (Event.KeyboardEvent ("7"))) {
 				if (Global.initialPause < 10) {
 					Global.initialPause++;
 				}
@@ -63,7 +67,8 @@ public class GUIControl : MonoBehaviour {
 			
 			// Decrease initial delay - range 0-10
 			if(GUI.Button(new Rect(20,210,90,20), "Decrease (4)")
-			   || Event.current.Equals (Event.KeyboardEvent ("[4]"))) {
+			   || Event.current.Equals (Event.KeyboardEvent ("[4]"))
+			   || Event.current.Equals (Event.KeyboardEvent ("4"))) {
 				if (Global.initialPause > 0) {
 					Global.initialPause--;
 				}
@@ -75,7 +80,8 @@ public class GUIControl : MonoBehaviour {
 			
 			// Increase expression delay - range 0-10
 			if(GUI.Button(new Rect(20,290,90,20), "Increase (8)")
-			   || Event.current.Equals (Event.KeyboardEvent ("[8]"))) {
+			   || Event.current.Equals (Event.KeyboardEvent ("[8]"))
+			   || Event.current.Equals (Event.KeyboardEvent ("8"))) {
 				if (Global.expressionPause < 10) {
 					Global.expressionPause++;
 				}
@@ -83,7 +89,8 @@ public class GUIControl : MonoBehaviour {
 			
 			// Decrease expression delay - range 0-10
 			if(GUI.Button(new Rect(20,320,90,20), "Decrease (5)")
-			   || Event.current.Equals (Event.KeyboardEvent ("[5]"))) {
+			   || Event.current.Equals (Event.KeyboardEvent ("[5]"))
+			   || Event.current.Equals (Event.KeyboardEvent ("5"))) {
 				if (Global.expressionPause > 0) {
 					Global.expressionPause--;
 				}

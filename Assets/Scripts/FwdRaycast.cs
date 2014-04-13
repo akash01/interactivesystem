@@ -19,6 +19,7 @@ public class FwdRaycast : MonoBehaviour {
 			if (hit.collider != null) {
 				color = Color.red;
 				hit.collider.SendMessage ("OnRayDetect", SendMessageOptions.DontRequireReceiver);
+				//print (hit.collider);
 			}
 		}
 		Debug.DrawRay(transform.position, fwd * 5, color);

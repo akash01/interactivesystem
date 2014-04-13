@@ -42,6 +42,7 @@ public class ObjectReactor : MonoBehaviour {
 		//TEST PRINT LINE - REMOVE
 		//print(hit);
 
+
 		// Trigger expression animation on first hit (when raytrace first hits collider)
 		if ( hit && !lastHit ) 
 		{
@@ -50,10 +51,12 @@ public class ObjectReactor : MonoBehaviour {
 				animationReady = false;
 				//Play expression animation
 				StartCoroutine(playExpression());
+				print ("Hit " + this);
 			}
 
 		}
-		
+
+		// Reset hit to false after first (trigger) hit
 		if ( !thisRayDetect && lastRayDetect ) 
 		{
 			hit = false;
@@ -65,22 +68,27 @@ public class ObjectReactor : MonoBehaviour {
 	public void OnRayDetect() {
 		//Record of raytrace hit on this frame
 		thisRayDetect = true;
-		print ("test");
+
 	}
 
 	//Play expression based on global variables
 	IEnumerator playExpression() {
-		string animationIn = "SmileIn";
-		string animationOut = "SmileOut";
+		string animationIn = "smileIn";
+		string animationOut = "smileOut";
 
 		//Set expression animations based on 'expression' global
 		if (Global.expression == "smile") {
-			animationIn = "SmileIn";
-			animationOut = "SmileOut";
+			animationIn = "smileIn";
+			animationOut = "smileOut";
 		}
 		if (Global.expression == "frown") {
-			animationIn = "frownIn";
-			animationOut = "frownOut";
+			animationIn = "smileInTEST";
+			animationOut = "smileOutTEST";
+		}
+
+		if (Global.expression == "angry") {
+			animationIn = "angryIn";
+			animationOut = "angryOut";
 		}
 
 		//Wait for initial pause (from global)

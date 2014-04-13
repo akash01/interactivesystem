@@ -5,7 +5,7 @@ using System.Collections;
 // ATTACHED TO EMPTY GAME OBJECT GlobalEmptyGameObject
 public class Global : MonoBehaviour {
 	
-	public static string expression = "smile";
+	public static string expression = "frown";
 	public static int initialPause = 1;
 	public static int expressionPause = 2;
 
