@@ -5,6 +5,8 @@ public class GUIControl : MonoBehaviour {
 
 	public Texture2D buttonImage = null;
 	private bool GUIEnabled = true;
+	public GameObject OVRController;
+	public GameObject FirstPersonController;
 
 	// Use this for initialization
 	void Start () {
@@ -12,8 +14,31 @@ public class GUIControl : MonoBehaviour {
 	}
 	
 	public void Update () {
-		if(Input.GetButtonUp("0")) {
+
+		// Toggle GUI on/off
+		if (Input.GetButtonDown("0")) {
 			GUIEnabled = !GUIEnabled;
+		}
+
+		// Toggle between standard camera and Oculus Rift camera
+		if (Input.GetButtonDown("ORToggle")) {
+			// If both controllers deactivated activate standard constroller/camera
+			if (!FirstPersonController.activeSelf && !OVRController.activeSelf)
+			{
+				FirstPersonController.SetActive(true);
+			}
+			else          // Toggle cameras
+			{
+				FirstPersonController.SetActive(!FirstPersonController.activeSelf);
+				OVRController.SetActive(!OVRController.activeSelf);
+			}
+		}
+
+		// Quit game on "Ecsape"
+		if (Input.GetButtonDown("Quit"))
+		{
+			print ("TEST");
+			Application.Quit();
 		}
 	}
 	
