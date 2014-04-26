@@ -51,7 +51,7 @@ public class ObjectReactor : MonoBehaviour {
 				animationReady = false;
 				//Play expression animation
 				StartCoroutine(playExpression());
-				print ("Hit " + this);
+				//print ("Hit " + this);
 			}
 
 		}
@@ -81,9 +81,9 @@ public class ObjectReactor : MonoBehaviour {
 			animationIn = "smileIn";
 			animationOut = "smileOut";
 		}
-		if (Global.expression == "frown") {
-			animationIn = "smileInTEST";
-			animationOut = "smileOutTEST";
+		if (Global.expression == "surprise") {
+			animationIn = "surpriseIn";
+			animationOut = "surpriseOut";
 		}
 
 		if (Global.expression == "angry") {

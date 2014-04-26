@@ -61,11 +61,11 @@ public class GUIControl : MonoBehaviour {
 
 			// Frown button
 			GUI.contentColor = Color.white;
-			if (Global.expression == "frown") {GUI.contentColor = Color.red;}
-			if(GUI.Button(new Rect(20,70,90,20), "Frown (2)")
+			if (Global.expression == "surprise") {GUI.contentColor = Color.red;}
+			if(GUI.Button(new Rect(20,70,90,20), "Surprise (2)")
 			   || Event.current.Equals (Event.KeyboardEvent ("[2]"))
 			   || Event.current.Equals (Event.KeyboardEvent ("2"))) {
-				Global.expression = "frown";
+				Global.expression = "surprise";
 			}
 			
 			// Angry button
